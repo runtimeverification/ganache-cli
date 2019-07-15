@@ -218,8 +218,8 @@ server.listen(options.port, options.hostname, function(err, result) {
   console.log("*    This uses KEVM as the Ethereum Virtual Machine, NOT EthereumJS-VM !!     *")
   console.log("*                                                                             *")
   console.log("* Please send us feedback!                                                    *")
-  console.log("* https://www.runtimeverification.com                                          *")
-  console.log("* https://www.github.com/runtimeverification                                   *")
+  console.log("* https://www.runtimeverification.com                                         *")
+  console.log("* https://www.github.com/runtimeverification                                  *")
   console.log("* https://riot.im/app/#/room/#k:matrix.org                                    *")
   console.log("*******************************************************************************")
 });
