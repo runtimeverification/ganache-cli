@@ -2,6 +2,7 @@
 
 // make sourcemaps work!
 require('source-map-support').install();
+const child_process = require('child_process');
 
 var yargs = require("yargs");
 var pkg = require("./package.json");
@@ -121,6 +122,11 @@ var server = ganache.server(options);
 
 console.log(detailedVersion);
 
+const kevm = child_process.spawn('node_modules/.bin/kevm-vm', ['127.0.0.1', '8080']);
+kevm.stdout.on('data',data => console.log('[kevm]: ' + data));
+kevm.stderr.on('data',data => console.log('[kevm-err]: ' + data));
+kevm.on('close', () => console.log('[kevm] stopped unexpectedly'));
+
 server.listen(options.port, options.hostname, function(err, result) {
   if (err) {
     console.log(err);
@@ -163,7 +169,7 @@ server.listen(options.port, options.hostname, function(err, result) {
     obj.addresses = accounts;
     obj.private_keys = {};
     addresses.forEach(function(address, index) {
-       obj.private_keys[address] = accounts[address].secretKey.toString("hex");
+      obj.private_keys[address] = accounts[address].secretKey.toString("hex");
     });
     var json = JSON.stringify(obj);
     fs.writeFile(options.account_keys_path, json, 'utf8',function(err){
