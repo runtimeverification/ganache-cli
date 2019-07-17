@@ -122,9 +122,7 @@ var server = ganache.server(options);
 
 console.log(detailedVersion);
 
-const kevm = child_process.spawn('node_modules/.bin/kevm-vm', ['127.0.0.1', '8080']);
-kevm.stdout.on('data',data => console.log('[kevm]: ' + data));
-kevm.stderr.on('data',data => console.log('[kevm-err]: ' + data));
+const kevm = child_process.spawn('node_modules/.bin/kevm-vm', ['8080', '127.0.0.1']) 
 kevm.on('close', () => console.log('[kevm] stopped unexpectedly'));
 
 server.listen(options.port, options.hostname, function(err, result) {
