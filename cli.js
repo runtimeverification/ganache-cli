@@ -18,7 +18,7 @@ var fs = require("fs");
 var initArgs = require("./args")
 var BN = require("bn.js");
 
-var detailedVersion = "Ganache CLI v" + pkg.version + " (ganache-core: " + ganache.version + ")";
+var detailedVersion = "KEVM Ganache CLI v" + pkg.version + " (ganache-core: " + ganache.version + ")";
 
 var isDocker = "DOCKER" in process.env && process.env.DOCKER.toLowerCase() === "true";
 var argv = initArgs(yargs, detailedVersion, isDocker).argv;
@@ -122,8 +122,15 @@ var server = ganache.server(options);
 
 console.log(detailedVersion);
 
-const kevm = child_process.spawn('node_modules/.bin/kevm-vm', ['8080', '127.0.0.1']) 
-kevm.on('close', () => console.log('[kevm] stopped unexpectedly'));
+const kevm = child_process.spawn('kevm-vm', ['8080', '127.0.0.1']) 
+kevm.on('close', () => kevmError())
+kevm.on('error', () => kevmError())
+
+function kevmError() {
+  logger.log('Error starting KEVM. Please make sure KEVM is installed and port 8080 is not in use.')
+  logger.log('See https://github.com/runtimeverification/ganache-cli#readme for details.')
+  process.exit(1)
+}
 
 server.listen(options.port, options.hostname, function(err, result) {
   if (err) {
