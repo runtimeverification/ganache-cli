@@ -128,7 +128,7 @@ kevm.on('error', () => kevmError())
 
 function kevmError() {
   logger.log('Error starting KEVM. Please make sure KEVM is installed and port 8080 is not in use.')
-  logger.log('See https://github.com/runtimeverification/ganache-cli#installing-kevm for details.')
+  logger.log('See https://github.com/runtimeverification/kevm-ganache-cli#installing-kevm for details.')
   process.exit(1)
 }
 
