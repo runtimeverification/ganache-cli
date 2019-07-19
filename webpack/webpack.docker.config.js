@@ -2,7 +2,7 @@ const { resolve } = require("path");
 const plugins = require("./plugins");
 
 const outputDir = resolve(__dirname, "../build");
-const outputFilename = "ganache-core.docker.cli.js";
+const outputFilename = "kevm-ganache-core.docker.cli.js";
 module.exports = {
   entry: [
     "./cli.js"
@@ -31,7 +31,7 @@ module.exports = {
   resolve: {
     alias: {
       "./build/Release/scrypt": "./build/Release/scrypt.node",
-      "./build/ganache-core.node.cli.js": "./lib.js"
+      "./build/kevm-ganache-core.node.cli.js": "./lib.js"
     }
   },
   plugins: plugins(outputDir, outputFilename),

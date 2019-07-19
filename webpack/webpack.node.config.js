@@ -2,7 +2,7 @@ const { resolve } = require("path");
 const plugins = require("./plugins");
 
 const outputDir = resolve(__dirname, "../build");
-const outputFilename = "ganache-core.node.cli.js";
+const outputFilename = "kevm-ganache-core.node.cli.js";
 module.exports = {
   entry: [
     "./lib.js"

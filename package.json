@@ -4,7 +4,7 @@
   "bin": {
     "ganache-cli": "cli.js"
   },
-  "main": "./build/ganache-core.node.cli.js",
+  "main": "./build/kevm-ganache-core.node.cli.js",
   "scripts": {
     "start": "node cli.js",
     "build": "webpack-cli --config ./webpack/webpack.node.config.js",
@@ -22,7 +22,7 @@
     "yargs"
   ],
   "devDependencies": {
-    "ganache-core": "runtimeverification/ganache-core",
+    "kevm-ganache-core": "0.0.1",
     "js-scrypt": "0.2.0",
     "node-loader": "^0.6.0",
     "on-build-webpack": "^0.1.0",
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trufflesuite/ganache-cli"
+    "url": "https://github.com/runtimeverification/kevm-ganache-cli"
   },
   "license": "MIT"
 }
