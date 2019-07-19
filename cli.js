@@ -10,7 +10,7 @@ var ganache;
 try {
   ganache = require("./lib");
 } catch(e) {
-  ganache = require("./build/ganache-core.node.cli.js");
+  ganache = require("./build/kevm-ganache-core.node.cli.js");
 }
 var to = ganache.to;
 var URL = require("url");
@@ -18,7 +18,7 @@ var fs = require("fs");
 var initArgs = require("./args")
 var BN = require("bn.js");
 
-var detailedVersion = "KEVM Ganache CLI v" + pkg.version + " (ganache-core: " + ganache.version + ")";
+var detailedVersion = "KEVM Ganache CLI v" + pkg.version + " (kevm-ganache-core: " + ganache.version + ")";
 
 var isDocker = "DOCKER" in process.env && process.env.DOCKER.toLowerCase() === "true";
 var argv = initArgs(yargs, detailedVersion, isDocker).argv;
