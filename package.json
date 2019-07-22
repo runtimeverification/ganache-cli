@@ -2,7 +2,7 @@
   "name": "kevm-ganache-cli",
   "version": "6.4.4",
   "bin": {
-    "ganache-cli": "cli.js"
+    "kevm-ganache-cli": "cli.js"
   },
   "main": "./build/kevm-ganache-core.node.cli.js",
   "scripts": {
