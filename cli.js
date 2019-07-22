@@ -122,7 +122,9 @@ var server = ganache.server(options);
 
 console.log(detailedVersion);
 
-const kevm = child_process.spawn('kevm-vm', ['8080', '127.0.0.1']) 
+var kevmOptions = {};
+kevmOptions.stdio = 'inherit';
+const kevm = child_process.spawn('kevm-vm', ['8080', '127.0.0.1'], kevmOptions)
 kevm.on('close', () => kevmError())
 kevm.on('error', () => kevmError())
 
