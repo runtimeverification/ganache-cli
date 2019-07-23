@@ -8,18 +8,22 @@ In order to run `kevm-ganache-cli`, you will need to install `kevm-vm`.
 We currently support Ubuntu Bionic (18.04) and Arch Linux (MacOS coming soon).
 Here a specific GitHub release is used, feel free to replace the URL with a newer release from <https://github.com/kframework/evm-semantics/releases>.
 
-### Ubuntu Bionic (18.04) - fresh VM
+### Ubuntu
+
+This is for Ubuntu Bionic (18.04), from a fresh LXC container.
 
 ```sh
-sudo apt install nodejs npm
+sudo apt install nodejs npm curl git
 curl --location 'https://github.com/kframework/evm-semantics/releases/download/v1.0.0-9ae34f5/kevm_1.0.0_amd64.deb' --output kevm_1.0.0_amd64.deb
 sudo apt install ./kevm_1.0.0_amd64.deb
 ```
 
-### Arch Linux - fresh VM
+### Arch
+
+This is for Arch Linux, from a fresh LXC container.
 
 ```sh
-sudo pacman -S nodejs npm git python2 make gcc
+sudo pacman -S nodejs npm git python2 make gcc curl git
 curl --location 'https://github.com/kframework/evm-semantics/releases/download/v1.0.0-9ae34f5/kevm-git-1.0.0-1-x86_64.pkg.tar.xz' --output kevm-git-1.0.0-1-x86_64.pkg.tar.xz
 sudo pacman -U kevm-git-1.0.0-1-x86_64.pkg.tar.xz
 ```
@@ -31,15 +35,6 @@ Install the `npx` executable globally with:
 
 ```sh
 sudo npm install -g npx
-```
-
-Install KEVM Ganache CLI and Truffle
-------------------------------------
-
-This downloads and installs the KEVM variant of `ganache-cli` and the test-runner `truffle`.
-
-```sh
-npm install kevm-ganache-cli truffle
 ```
 
 Run some Tests
