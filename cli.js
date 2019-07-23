@@ -123,7 +123,11 @@ var server = ganache.server(options);
 console.log(detailedVersion);
 
 var kevmOptions = {};
-kevmOptions.stdio = 'inherit';
+if (process.env.FIREFLY_DEBUG) {
+  kevmOptions.stdio = 'inherit'
+} else {
+  kevmOptions.stdio = 'ignore'
+}
 const kevm = child_process.spawn('kevm-vm', ['8080', '127.0.0.1'], kevmOptions)
 kevm.on('close', () => kevmError())
 kevm.on('error', () => kevmError())
