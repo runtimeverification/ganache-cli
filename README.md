@@ -1,11 +1,56 @@
-# KEVM Ganache-CLI fork
+KEVM Ganache-CLI Fork
+=====================
 
-## Installing KEVM
+Installing KEVM
+---------------
+
 In order to run `kevm-ganache-cli`, you will need to install `kevm-vm`.
-We currently support [Ubuntu](#Ubuntu), [Arch](#Arch), and [MacOS](#MacOS).
+We currently support Ubuntu Bionic (18.04) and Arch Linux (MacOS coming soon).
+Here a specific GitHub release is used, feel free to replace the URL with a newer release from <https://github.com/kframework/evm-semantics/releases>.
 
 ### Ubuntu
 
+This is for Ubuntu Bionic (18.04), from a fresh LXC container.
+
+```sh
+sudo apt install nodejs npm curl git
+curl --location 'https://github.com/kframework/evm-semantics/releases/download/v1.0.0-9ae34f5/kevm_1.0.0_amd64.deb' --output kevm_1.0.0_amd64.deb
+sudo apt install ./kevm_1.0.0_amd64.deb
+```
+
 ### Arch
 
-### MacOS
+This is for Arch Linux, from a fresh LXC container.
+
+```sh
+sudo pacman -S nodejs npm git python2 make gcc curl git
+curl --location 'https://github.com/kframework/evm-semantics/releases/download/v1.0.0-9ae34f5/kevm-git-1.0.0-1-x86_64.pkg.tar.xz' --output kevm-git-1.0.0-1-x86_64.pkg.tar.xz
+sudo pacman -U kevm-git-1.0.0-1-x86_64.pkg.tar.xz
+```
+
+Install `npx`
+-------------
+
+Install the `npx` executable globally with:
+
+```sh
+sudo npm install -g npx
+```
+
+Run some Tests
+--------------
+
+Start the Ganache + KEVM server:
+
+```sh
+npx kevm-ganache-cli
+```
+
+Run some tests (in another terminal, or background the last run):
+
+```sh
+git clone 'https://github.com/openzeppelin/openzeppelin-solidity'
+cd openzeppelin-solidity
+npm install
+npx truffle test test/token/ERC20/ERC20.test.js
+```
