@@ -1,6 +1,6 @@
 {
   "name": "kevm-ganache-cli",
-  "version": "6.4.6",
+  "version": "6.4.7",
   "bin": {
     "kevm-ganache-cli": "cli.js"
   },
@@ -22,7 +22,7 @@
     "yargs"
   ],
   "devDependencies": {
-    "kevm-ganache-core": "2.5.6",
+    "kevm-ganache-core": "2.5.7",
     "js-scrypt": "0.2.0",
     "node-loader": "^0.6.0",
     "on-build-webpack": "^0.1.0",
