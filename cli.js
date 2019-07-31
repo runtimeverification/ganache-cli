@@ -122,6 +122,14 @@ var server = ganache.server(options);
 
 console.log(detailedVersion);
 
+try {
+  child_process.execSync('which kevm-vm')
+} catch (e) {
+  logger.log('Error starting KEVM. Please make sure KEVM is installed and port 8080 is not in use.')
+  logger.log('See https://github.com/runtimeverification/kevm-ganache-cli#installing-kevm for details.')
+  process.exit(1)
+}
+
 var kevmOptions = {};
 if (process.env.FIREFLY_DEBUG) {
   kevmOptions.stdio = 'inherit'
@@ -129,14 +137,11 @@ if (process.env.FIREFLY_DEBUG) {
   kevmOptions.stdio = 'ignore'
 }
 const kevm = child_process.spawn('kevm-vm', ['8080', '127.0.0.1'], kevmOptions)
-kevm.on('close', () => kevmError())
-kevm.on('error', () => kevmError())
-
-function kevmError() {
-  logger.log('Error starting KEVM. Please make sure KEVM is installed and port 8080 is not in use.')
-  logger.log('See https://github.com/runtimeverification/kevm-ganache-cli#installing-kevm for details.')
+kevm.on('close', () => {
+  logger.log('KEVM closed unexpectedly! To report any crashes, please find us on GitHub:')
+  logger.log('https://github.com/runtimeverification/kevm-ganache-cli')
   process.exit(1)
-}
+})
 
 server.listen(options.port, options.hostname, function(err, result) {
   if (err) {
