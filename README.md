@@ -6,6 +6,7 @@ Installing KEVM
 
 In order to run `kevm-ganache-cli`, you will need to install `kevm-vm`.
 We currently support Ubuntu Bionic (18.04) and Arch Linux (MacOS coming soon).
+There is no support for Windows directly, but instead you can install `kevm-vm` on WSL using the instructions for Ubuntu Bionic (More about WSL: https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 Here a specific GitHub release is used, feel free to replace the URL with a newer release from <https://github.com/kframework/evm-semantics/releases>.
 
 ### Ubuntu
