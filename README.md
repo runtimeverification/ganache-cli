@@ -5,7 +5,7 @@ Installing KEVM
 ---------------
 
 In order to run `kevm-ganache-cli`, you will need to install `kevm-vm`.
-We currently support Ubuntu Bionic (18.04) and Arch Linux (MacOS coming soon).
+We currently support Ubuntu Bionic (18.04) and MacOS (Arch Linux coming soon).
 There is no support for Windows directly, but instead you can install `kevm-vm` on WSL using the instructions for Ubuntu Bionic (More about WSL: https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 Here a specific GitHub release is used, feel free to replace the URL with a newer release from <https://github.com/kframework/evm-semantics/releases>.
 
@@ -17,6 +17,12 @@ This is for Ubuntu Bionic (18.04), from a fresh LXC container.
 sudo apt install nodejs npm curl git
 curl --location 'https://github.com/kframework/evm-semantics/releases/download/v1.0.0-84e09b2/kevm_1.0.0_amd64.deb' --output kevm_1.0.0_amd64.deb
 sudo apt install ./kevm_1.0.0_amd64.deb
+```
+
+### MacOS
+
+```sh
+brew install kframework/k/kevm
 ```
 
 ### Arch
