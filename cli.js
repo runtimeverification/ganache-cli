@@ -230,19 +230,19 @@ server.listen(options.port, options.hostname, function(err, result) {
 
   console.log("");
   console.log("*******************************************************************************")
-  console.log("*                             G R E E T I N G S !                             *")
-  console.log("*                                                                             *")
-  console.log("*                  You are running on a fork of Ganache-CLI                   *")
+  console.log("*                     W E L C O M E  T O  F I R E F L Y !                     *")
   console.log("*                                                                             *")
   console.log("*                                developed by                                 *")
   console.log("*                          Runtime Verification Inc.                          *")
   console.log("*                                                                             *")
-  console.log("*    This uses KEVM as the Ethereum Virtual Machine, NOT EthereumJS-VM !!     *")
+  console.log("*                        This is a fork of Ganache-CLI                        *")
+  console.log("*                                                                             *")
+  console.log("* Firefly uses KEVM as the Ethereum Virtual Machine instead of EthereumJS-VM! *")
   console.log("*                                                                             *")
   console.log("* Please send us feedback!                                                    *")
   console.log("* https://www.runtimeverification.com                                         *")
   console.log("* https://www.github.com/runtimeverification                                  *")
-  console.log("* https://riot.im/app/#/room/#k:matrix.org                                    *")
+  console.log("* https://riot.im/app/#/room/#firefly-kevm:matrix.org                         *")
   console.log("*******************************************************************************")
 });
 
