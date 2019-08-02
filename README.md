@@ -25,7 +25,7 @@ sudo apt install ./kevm_1.0.0_amd64.deb
 brew install kframework/k/kevm
 ```
 
-### Arch
+### Arch (under construction)
 
 This is for Arch Linux, from a fresh LXC container.
 
@@ -53,11 +53,12 @@ Start the Ganache + KEVM server:
 npx kevm-ganache-cli
 ```
 
-Run some tests (in another terminal, or background the last run):
+Run OpenZeppelin tests:
 
 ```sh
-git clone 'https://github.com/openzeppelin/openzeppelin-solidity'
-cd openzeppelin-solidity
+git clone https://github.com/OpenZeppelin/openzeppelin-contracts.git
+cd openzeppelin-contracts
+git checkout b8c8308
 npm install
-npx truffle test test/token/ERC20/ERC20.test.js
+npx truffle test
 ```
