@@ -1,6 +1,6 @@
 {
   "name": "kevm-ganache-cli",
-  "version": "6.4.8",
+  "version": "6.4.9",
   "bin": {
     "kevm-ganache-cli": "cli.js"
   },
