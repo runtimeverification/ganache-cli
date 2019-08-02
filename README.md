@@ -15,7 +15,7 @@ This is for Ubuntu Bionic (18.04), from a fresh LXC container.
 
 ```sh
 sudo apt install nodejs npm curl git
-curl --location 'https://github.com/kframework/evm-semantics/releases/download/v1.0.0-84e09b2/kevm_1.0.0_amd64.deb' --output kevm_1.0.0_amd64.deb
+curl --location 'https://github.com/kframework/evm-semantics/releases/download/v1.0.0-a47e4b2/kevm_1.0.0_amd64.deb' --output kevm_1.0.0_amd64.deb
 sudo apt install ./kevm_1.0.0_amd64.deb
 ```
 
@@ -31,7 +31,7 @@ This is for Arch Linux, from a fresh LXC container.
 
 ```sh
 sudo pacman -S nodejs npm git python2 make gcc curl git
-curl --location 'https://github.com/kframework/evm-semantics/releases/download/v1.0.0-84e09b2/kevm-git-1.0.0-1-x86_64.pkg.tar.xz' --output kevm-git-1.0.0-1-x86_64.pkg.tar.xz
+curl --location 'https://github.com/kframework/evm-semantics/releases/download/v1.0.0-a47e4b2/kevm-git-1.0.0-1-x86_64.pkg.tar.xz' --output kevm-git-1.0.0-1-x86_64.pkg.tar.xz
 sudo pacman -U kevm-git-1.0.0-1-x86_64.pkg.tar.xz
 ```
 
